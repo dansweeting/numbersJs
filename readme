@@ -1,0 +1,5 @@
+Demonstration of javascript automated testing with the jasmine framework.
+
+In this demo, by using phantomJs at the command line, it's possible to automate your tests without the need for a browser - or you can manually run tests in a browser by loading spec/SpecRunner.html 
+
+See the simple run-tests.sh script for example.
