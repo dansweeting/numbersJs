@@ -3,13 +3,9 @@ describe("NumbersGameState", function() {
 	this.beforeEach( function() {
 		this.addMatchers( {
 			toContainItemMatching: function(match) {
-				var foundAt = -1;
-				$.each(this.actual, function(index,value) {
-					if ( value.toString() === match) {
-						foundAt = index;
-					}
-				});
-				return foundAt >= 0;
+				return _.find(this.actual, function(exp) {
+					return exp.toString() === match;
+				}) != undefined;
 			}
 		});
 	});
