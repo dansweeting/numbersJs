@@ -1,53 +1,53 @@
 var Num = function(num) {
-	this.value = num;
+	this.num = num;
 }
-
 Num.prototype = {
 	toString: function() {
-		return this.value;
-	}
+		return this.value();
+	},
+	value: function() { return this.num;}
 }
 
 var Addition = function(lhs,rhs) {
 	this.lhs = lhs;
 	this.rhs = rhs;
-	this.value = lhs.value + rhs.value;
 }
 Addition.prototype = {
 	toString: function() {
 		return "(" + this.lhs.toString() + " + " + this.rhs.toString() + ")";
-	}
+	},
+	value : function() { return this.lhs.value() + this.rhs.value() }
 }
 
 var Subtraction = function(lhs,rhs) {
 	this.lhs = lhs;
 	this.rhs = rhs;
-	this.value = lhs.value - rhs.value;
 }
 Subtraction.prototype = {
 	toString: function() {
 		return "(" + this.lhs.toString() + " - " + this.rhs.toString() + ")";
-	}
+	},
+	value : function() { return this.lhs.value() - this.rhs.value() }
 }
 
 var Multiplication = function(lhs,rhs) {
 	this.lhs = lhs;
 	this.rhs = rhs;
-	this.value = lhs.value * rhs.value;
 }
 Multiplication.prototype = {
 	toString: function() {
 		return "(" + this.lhs.toString() + " * " + this.rhs.toString() + ")";
-	}
+	},
+	value : function() { return this.lhs.value() * this.rhs.value() }
 }
 
 var Division = function(lhs,rhs) {
 	this.lhs = lhs;
 	this.rhs = rhs;
-	this.value = lhs.value / rhs.value;
 }
 Division.prototype = {
 	toString: function() {
 		return "(" + this.lhs.toString() + " / " + this.rhs.toString() + ")";
-	}
+	},
+	value : function() { return this.lhs.value() / this.rhs.value() }
 }

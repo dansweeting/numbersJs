@@ -9,7 +9,7 @@ describe("Arithmetic expressions", function() {
     })
 
     it("should provide correct value", function() {
-      expect(expression.value).toEqual(5);
+      expect(expression.value()).toEqual(5);
     });
 
     it("should provide correct toString value", function() {
@@ -24,7 +24,7 @@ describe("Arithmetic expressions", function() {
     })
 
     it("should provide correct value", function() {
-      expect(expression.value).toEqual(7);
+      expect(expression.value()).toEqual(7);
     });
 
     it("should provide correct toString value", function() {
@@ -39,7 +39,7 @@ describe("Arithmetic expressions", function() {
     })
 
     it("should provide correct value", function() {
-      expect(expression.value).toEqual(70);
+      expect(expression.value()).toEqual(70);
     });
 
     it("should provide correct toString value", function() {
@@ -54,7 +54,7 @@ describe("Arithmetic expressions", function() {
     })
 
     it("should provide correct value", function() {
-      expect(expression.value).toEqual(70);
+      expect(expression.value()).toEqual(70);
     });
 
     it("should provide correct toString value", function() {
@@ -72,7 +72,7 @@ describe("Arithmetic expressions", function() {
     })
 
     it("should provide correct value", function() {
-      expect(expression.value).toEqual(5);
+      expect(expression.value()).toEqual(5);
     });
 
     it("should provide correct toString value", function() {
