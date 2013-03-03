@@ -2,9 +2,11 @@ describe("NumbersGameState", function() {
 
 	this.beforeEach( function() {
 		this.addMatchers( {
-			toContainItemMatching: function(match) {
-				return _.find(this.actual, function(exp) {
-					return exp.toString() === match;
+			toContainExpressionMatching: function(match) {
+				return _.find(this.actual, function(state) {
+					return _.find(state.expressions, function(expr) {
+						return expr.toString() === match;
+					}) != undefined;
 				}) != undefined;
 			}
 		});
@@ -48,15 +50,15 @@ describe("NumbersGameState", function() {
 		});
 
 		it("Should contain 3 - 2", function() {
-			expect(neighbours).toContainItemMatching("(3 - 2)");
+			expect(neighbours).toContainExpressionMatching("(3 - 2)");
 		});	
 
 		it("Should contain 2 * 3", function() {
-			expect(neighbours).toContainItemMatching("(2 * 3)");
+			expect(neighbours).toContainExpressionMatching("(2 * 3)");
 		});	
 
 		it("Should contain 2 + 3", function() {
-			expect(neighbours).toContainItemMatching("(2 + 3)");
+			expect(neighbours).toContainExpressionMatching("(2 + 3)");
 		});		
 	});
 
@@ -77,19 +79,19 @@ describe("NumbersGameState", function() {
 		});
 
 		it("Should contain 5 + 25", function() {
-			expect(neighbours).toContainItemMatching("(5 + 25)");
+			expect(neighbours).toContainExpressionMatching("(5 + 25)");
 		});	
 
 		it("Should contain 5 * 25", function() {
-			expect(neighbours).toContainItemMatching("(5 * 25)");
+			expect(neighbours).toContainExpressionMatching("(5 * 25)");
 		});	
 
 		it("Should contain 25 / 5", function() {
-			expect(neighbours).toContainItemMatching("(25 / 5)");
+			expect(neighbours).toContainExpressionMatching("(25 / 5)");
 		});	
 
 		it("Should contain 25 - 5", function() {
-			expect(neighbours).toContainItemMatching("(25 - 5)");
+			expect(neighbours).toContainExpressionMatching("(25 - 5)");
 		});		
 	});
 

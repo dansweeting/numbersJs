@@ -32,11 +32,19 @@ NumbersGameState.prototype = {
 	},
 	neighbours: function() {
 		var result = [];
-		
-		return [
-			new Subtraction(new Num(3),new Num(2)),
-			new Addition(new Num(2),new Num(3)),
-			new Multiplication(new Num(2),new Num(3)),
-		];
+		var state = this;
+
+		_.each( this.expressions.combinations(), function(elem,index,list) {
+			var lhs = elem[0];
+			var rhs = elem[1];
+			_.each(state.allOperations(lhs,rhs), function(elem,index,list) {
+				var exprs = _.union([elem],_.without(state.expressions,lhs,rhs));
+				result.push(new NumbersGameState( {
+					expressions : exprs,
+					target: state.target
+				 }));
+			});
+		});
+		return result;
 	},
 }
