@@ -1,3 +1,9 @@
+var Num = numbersGame.expressions.Num;
+var Addition = numbersGame.expressions.Addition;
+var Subtraction = numbersGame.expressions.Subtraction;
+var Multiplication = numbersGame.expressions.Multiplication;
+var Division = numbersGame.expressions.Division;
+
 describe("Arithmetic expressions", function() {
   
   var expression;

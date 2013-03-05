@@ -1,8 +1,10 @@
-var Search = function(state) {
+var numbersGame = numbersGame || {};
+
+numbersGame.Search = function(state) {
 	this.state = state;
 };
 
-Search.prototype.Invoke = function() {
+numbersGame.Search.prototype.Invoke = function() {
 	var iter = function(states) {
 
 		if (_.isEmpty(states))

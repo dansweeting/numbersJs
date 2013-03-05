@@ -1,8 +1,10 @@
-var Solver = function(nums) {
+var numbersGame = numbersGame || {};
+
+numbersGame.Solver = function(nums) {
 	this.nums = nums;
 };
 
-Solver.prototype.SolveFor = function(target) {
+numbersGame.Solver.prototype.SolveFor = function(target) {
 	var initialExpressions = _.map(this.nums,function(num) {
 		return new Num(num);
 	});

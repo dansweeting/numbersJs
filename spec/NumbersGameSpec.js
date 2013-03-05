@@ -1,3 +1,10 @@
+var NumbersGameState = numbersGame.NumbersGameState;
+var Num = numbersGame.expressions.Num;
+var Addition = numbersGame.expressions.Addition;
+var Subtraction = numbersGame.expressions.Subtraction;
+var Multiplication = numbersGame.expressions.Multiplication;
+var Division = numbersGame.expressions.Division;
+
 describe("NumbersGameState", function() {
 
 	this.beforeEach( function() {

@@ -1,3 +1,5 @@
+var Solver = numbersGame.Solver;
+
 describe("Numbers Game Solver", function() {
 
 	it("should exist", function() {

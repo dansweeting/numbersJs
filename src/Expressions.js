@@ -1,51 +1,54 @@
-var Num = function(num) {
+var numbersGame = numbersGame || {};
+numbersGame.expressions = numbersGame.expressions || {};
+
+numbersGame.expressions.Num = function(num) {
 	this.num = num;
 }
-Num.prototype = {
+numbersGame.expressions.Num.prototype = {
 	toString: function() {
 		return this.value();
 	},
 	value: function() { return this.num;}
 }
 
-var Addition = function(lhs,rhs) {
+numbersGame.expressions.Addition = function(lhs,rhs) {
 	this.lhs = lhs;
 	this.rhs = rhs;
 }
-Addition.prototype = {
+numbersGame.expressions.Addition.prototype = {
 	toString: function() {
 		return "(" + this.lhs.toString() + " + " + this.rhs.toString() + ")";
 	},
 	value : function() { return this.lhs.value() + this.rhs.value() }
 }
 
-var Subtraction = function(lhs,rhs) {
+numbersGame.expressions.Subtraction = function(lhs,rhs) {
 	this.lhs = lhs;
 	this.rhs = rhs;
 }
-Subtraction.prototype = {
+numbersGame.expressions.Subtraction.prototype = {
 	toString: function() {
 		return "(" + this.lhs.toString() + " - " + this.rhs.toString() + ")";
 	},
 	value : function() { return this.lhs.value() - this.rhs.value() }
 }
 
-var Multiplication = function(lhs,rhs) {
+numbersGame.expressions.Multiplication = function(lhs,rhs) {
 	this.lhs = lhs;
 	this.rhs = rhs;
 }
-Multiplication.prototype = {
+numbersGame.expressions.Multiplication.prototype = {
 	toString: function() {
 		return "(" + this.lhs.toString() + " * " + this.rhs.toString() + ")";
 	},
 	value : function() { return this.lhs.value() * this.rhs.value() }
 }
 
-var Division = function(lhs,rhs) {
+numbersGame.expressions.Division = function(lhs,rhs) {
 	this.lhs = lhs;
 	this.rhs = rhs;
 }
-Division.prototype = {
+numbersGame.expressions.Division.prototype = {
 	toString: function() {
 		return "(" + this.lhs.toString() + " / " + this.rhs.toString() + ")";
 	},

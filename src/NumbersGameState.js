@@ -1,9 +1,11 @@
-var NumbersGameState = function(args) {
+var numbersGame = numbersGame || {};
+
+numbersGame.NumbersGameState = function(args) {
 	this.expressions = args.expressions;
 	this.target = args.target;
 };
 
-NumbersGameState.prototype = {
+numbersGame.NumbersGameState.prototype = {
 	isTarget: function() {
 		var target = this.target;
 		return _.find(this.expressions, function(exp) {

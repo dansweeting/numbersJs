@@ -1,3 +1,5 @@
+var Search = numbersGame.Search;
+
 describe("Search", function() {
 
 	it("should exist", function() {
