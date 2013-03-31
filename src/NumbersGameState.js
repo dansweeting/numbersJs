@@ -16,17 +16,26 @@ numbersGame.NumbersGameState.prototype = {
 		var min = lhs.value() <  rhs.value() ? lhs : rhs;
 		var max = lhs.value() >= rhs.value() ? lhs : rhs;
 
+		var minValue = min.value();
+		var maxValue = max.value();
+
 		var operations = [
 			new Addition(min,max),
 			new Subtraction(max,min)
 		];
 
-		var shouldMultiply = min.value() > 1 && max.value() > 1;
+		operations = _.filter(operations,function(elem) {
+			return elem.value() > 0;
+		});
+
+		var shouldMultiply = minValue > 1 && maxValue > 1;
 		if (shouldMultiply) {
 			operations.push(new Multiplication(min,max))
 		}
 
-		var shouldDivide = min.value() > 1 && max.value() % min.value() == 0;
+		var shouldDivide =  minValue > 1 &&
+		 					minValue != maxValue && 
+		 					maxValue % minValue == 0;
 		if (shouldDivide) {
 			operations.push(new Division(max,min));
 		}
@@ -35,7 +44,6 @@ numbersGame.NumbersGameState.prototype = {
 	neighbours: function() {
 		var result = [];
 		var state = this;
-
 		_.each( this.expressions.combinations(), function(elem,index,list) {
 			var lhs = elem[0];
 			var rhs = elem[1];
